@@ -38,7 +38,6 @@ CpomodoroApp::CpomodoroApp()
 
 CpomodoroApp theApp;
 
-
 // CpomodoroApp initialization
 
 BOOL CpomodoroApp::InitInstance()
@@ -73,7 +72,7 @@ BOOL CpomodoroApp::InitInstance()
 	SetRegistryKey(_T("Local AppWizard-Generated Applications"));
 
 	CPropertySheet pSheet;
-	pSheet.m_psh.dwFlags |= PSH_NOAPPLYNOW;
+	pSheet.m_psh.dwFlags |= PSH_NOAPPLYNOW;	//remove Apply button
 	CPropPageSettings pPPSettings;
 	CPropPageWork pPPWork;
 	CPropPageStats pPPStats;

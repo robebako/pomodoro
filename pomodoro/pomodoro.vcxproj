@@ -187,6 +187,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CNewProjectDlg.h" />
     <ClInclude Include="CPropPageSettings.h" />
     <ClInclude Include="CPropPageStats.h" />
     <ClInclude Include="CPropPageWork.h" />
@@ -198,6 +199,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CNewProjectDlg.cpp" />
     <ClCompile Include="CPropPageSettings.cpp" />
     <ClCompile Include="CPropPageStats.cpp" />
     <ClCompile Include="CPropPageWork.cpp" />

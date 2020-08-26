@@ -42,6 +42,9 @@
     <ClInclude Include="CPropPageWork.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CNewProjectDlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pomodoro.cpp">
@@ -60,6 +63,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="CPropPageWork.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CNewProjectDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
