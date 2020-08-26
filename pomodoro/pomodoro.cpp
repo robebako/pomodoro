@@ -6,6 +6,9 @@
 #include "framework.h"
 #include "pomodoro.h"
 #include "pomodoroDlg.h"
+#include "CPropPageSettings.h"
+#include "CPropPageStats.h"
+#include "CPropPageWork.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -69,24 +72,46 @@ BOOL CpomodoroApp::InitInstance()
 	// such as the name of your company or organization
 	SetRegistryKey(_T("Local AppWizard-Generated Applications"));
 
-	CpomodoroDlg dlg;
-	m_pMainWnd = &dlg;
-	INT_PTR nResponse = dlg.DoModal();
-	if (nResponse == IDOK)
+	CPropertySheet pSheet;
+	pSheet.m_psh.dwFlags |= PSH_NOAPPLYNOW;
+	CPropPageSettings pPPSettings;
+	CPropPageWork pPPWork;
+	CPropPageStats pPPStats;
+	pSheet.AddPage(&pPPSettings);
+	pSheet.AddPage(&pPPWork);
+	pSheet.AddPage(&pPPStats);
+
+	INT_PTR psResponse = pSheet.DoModal();
+
+	if (psResponse == IDOK)
 	{
 		// TODO: Place code here to handle when the dialog is
 		//  dismissed with OK
 	}
-	else if (nResponse == IDCANCEL)
+	else if (psResponse == IDCANCEL)
 	{
 		// TODO: Place code here to handle when the dialog is
 		//  dismissed with Cancel
 	}
-	else if (nResponse == -1)
-	{
-		TRACE(traceAppMsg, 0, "Warning: dialog creation failed, so application is terminating unexpectedly.\n");
-		TRACE(traceAppMsg, 0, "Warning: if you are using MFC controls on the dialog, you cannot #define _AFX_NO_MFC_CONTROLS_IN_DIALOGS.\n");
-	}
+
+	//CpomodoroDlg dlg;
+	//m_pMainWnd = &dlg;
+	//INT_PTR nResponse = dlg.DoModal();
+	//if (nResponse == IDOK)
+	//{
+	//	// TODO: Place code here to handle when the dialog is
+	//	//  dismissed with OK
+	//}
+	//else if (nResponse == IDCANCEL)
+	//{
+	//	// TODO: Place code here to handle when the dialog is
+	//	//  dismissed with Cancel
+	//}
+	//else if (nResponse == -1)
+	//{
+	//	TRACE(traceAppMsg, 0, "Warning: dialog creation failed, so application is terminating unexpectedly.\n");
+	//	TRACE(traceAppMsg, 0, "Warning: if you are using MFC controls on the dialog, you cannot #define _AFX_NO_MFC_CONTROLS_IN_DIALOGS.\n");
+	//}
 
 	// Delete the shell manager created above.
 	if (pShellManager != nullptr)
